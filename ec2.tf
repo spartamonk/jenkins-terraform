@@ -6,7 +6,14 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+resource "aws_instance" "test" {
+  ami           = "ami-0453ec754f44f9a4a"
+  instance_type = "t2.micro"
 
+  tags = {
+    Name = "Test"
+  }
+}
 # data "aws_ami" "ubuntu" {
 #   most_recent = true
 #   owners      = ["amazon"]
